@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KOD â€” My Journey in the World of Code</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            kodpurple: '#6C5CE7',
+            kodlight: '#a29bfe'
+          },
+          fontFamily: {
+            display: ['Poppins', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          },
+          animation: {
+            fadeIn: 'fadeIn 2s ease-in forwards',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: 0 },
+              '100%': { opacity: 1 },
+            },
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass {
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-800 via-gray-900 to-indigo-900 text-white font-body flex flex-col items-center justify-center px-4 py-10">
+  <!-- Dark/Light Toggle -->
+  <div class="absolute top-4 right-4">
+    <button id="toggleTheme" class="px-4 py-2 bg-kodpurple text-white rounded">Toggle Theme</button>
+  </div>
+
+  <div class="flex flex-col items-center w-full max-w-3xl animate-fadeIn">
+    <!-- Site Title -->
+    <h1 class="text-5xl md:text-6xl font-bold mb-6 text-center font-display text-kodlight">KOD â€” My Journey in the World of Code</h1>
+
+    <!-- App Container with Glassmorphism -->
+    <div class="glass w-full p-8 shadow-xl">
+      <h2 class="text-2xl font-semibold mb-4">Everything I Wish I Had Known Before Diving Into "No Code"</h2>
+      <p class="text-lg leading-relaxed mb-6">
+        This space is dedicated to capturing key lessons, snippets, patterns, and workflows I've discovered through coding â€” with a focus on empowering beginners, self-taught developers, and future makers.
+      </p>
+
+      <!-- Snippet Presentation Placeholder -->
+      <div class="mt-4 bg-black/30 p-4 rounded-lg">
+        <pre class="whitespace-pre-wrap text-sm font-mono overflow-x-auto">
+// Example JavaScript snippet
+const greet = (name) => `Hello, ${name}!`;
+console.log(greet("World"));
+        </pre>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="glass w-full p-6 mt-10 shadow-lg">
+      <h3 class="text-xl font-semibold mb-4">ðŸ“¬ Contact Me</h3>
+      <form action="https://formspree.io/f/mnqebblk" method="POST" class="space-y-4">
+        <input type="text" name="name" placeholder="Your name" required class="w-full px-4 py-2 rounded bg-gray-100 text-black" />
+        <input type="email" name="email" placeholder="Your email" required class="w-full px-4 py-2 rounded bg-gray-100 text-black" />
+        <textarea name="message" placeholder="Your message..." rows="4" class="w-full px-4 py-2 rounded bg-gray-100 text-black"></textarea>
+        <button type="submit" class="bg-kodpurple text-white px-6 py-2 rounded hover:bg-indigo-600 transition-all">Send</button>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-10 text-sm text-gray-300 text-center">
+      &copy;2025 maixtab.fr
+    </footer>
+  </div>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    const toggleBtn = document.getElementById('toggleTheme');
+    toggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+  </script>
+</body>
+</html>
